@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+until users | grep $1   # untill command will run till the condition is false, the argument which we pass through the command l				#line is a user name and the "users" command with see if the user name is present or not,					# if user name is not present the do loop will execute as it is part of the until , 
+			   # the moment until condition becomes true i.e it finds the argument matching over there, 
+		           # the do,done loop comes out and the next statement executes
+do 
+echo $1 is not logged yet
+done
+
+echo the user $1 has logged in 
+

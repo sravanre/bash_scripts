@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# script for executing a process in required time, this might call anohter funcition also.
+
+
+SECS=0
+MINUTES=0
+HOURS=0
+DAYS=0
+PROCESS=         # process here is initilized to null
+
+while getopts s:m:h:d:p: TIMED 2>/dev/null
+
+do 
+
+case $TIMED in 
+s) SECS=$OPTARG
+;;
+m) ((MINUTES = $OPTARG * 60 ))
+;;
+h) ((HOURS = $OPTARG * 3600))
+;;
+d) ((DAYS=$OPTARG * 86400))
+;;
+p) PROCESS=$OPTARG
+;;
+\?) echo invalid option
+exit 1;;
+esac
+
+echo $SECS
+echo $MINUTES
+echo $HOURS
+done
+

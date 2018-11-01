@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#script that shows how to make sure that user input is provided
+
+if [ -z $1 ]
+then
+	 echo provide filenames 
+	read $FILENAMES
+else
+	FILENAMES="$*"
+fi
+
+echo the \$FILENAMES provided are "$FILENAMES"
+
+for i in $FILENAMES
+do 
+ 	 cp $i /root/bin/homefile/
+done 
+
+

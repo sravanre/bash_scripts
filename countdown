@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# here we hve intialized a variable from that was input from user
+## multipleing it with 60 to make it in complete seconds,
+
+COUNTER=$1
+COUNTER=$((COUNTER * 60))
+
+# function for the COUNTER to minus 1 with a interval of a 1 sec
+
+minen()
+{
+COUNTER=$((COUNTER -1))
+sleep 1
+}
+
+# testing counter is greater than 0 with this check option 
+# and minusing a 1 from it
+
+while [ $COUNTER -gt 0 ]
+do 
+echo you still have $COUNTER seconds left
+minen
+done
+# this counts untill the Counter variable is equal to 0 and then after finishes it
+
+
+
+[ $COUNTER = 0 ] && echo time for you has run out && minen   #tests counter = 0 if yes then prints the message
+[ $COUNTER = "-1" ] && echo you are one sec late #check if counter=-1 and tell late by one sec
+
+while true  # while true always true/infinite case , do here we are into a infinite loop 
+do 
+minen  #
+echo you are ${COUNTER#*-} seconds late  # trims of the negetive sign from the variable and get counter from 
+					#	the minen function that is defined at the start of the script
+done
+
+

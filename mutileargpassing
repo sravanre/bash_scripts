@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#passing multiple arg and validating the use of arguments beyond 10.
+
+
+#if "i < 15"
+
+#sleep 1
+#echo ((i + 1))
+
+ #	fi
+
+
+
+echo $1 
+echo $2
+echo $9
+echo $10
+echo $11
+echo ${10}
+echo ${12}
+
+
+
+shift
+echo $10
+echo $12

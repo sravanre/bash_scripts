@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#program to select a task and make it implemented in a interactive manner
+
+select	TASK in 'check mounts' 'check diskspace' 'check memory'
+
+do
+echo task = $TASK
+echo reply = $REPLY
+
+case $REPLY in
+1 ) TASK=mount;;
+2 ) TASK="df -h";;
+3 ) TASK="free -m" ;;
+* ) echo no input
+
+esac
+
+trap DEBUG 
+if [ -n "$REPLY" ]
+then 
+#clear
+$TASK
+break
+trap - DEBUG
+else
+echo invalid choice && exit 3
+
+fi
+done
+
+exit 0

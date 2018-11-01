@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#well i think for doing this here program for writing many lines without using echo ,
+# i can use any word to redirect the output 
+
+
+cat <<mummy
+dfdfd
+fag
+dagd
+ag
+ag
+dag
+
+sdg
+how are you doing mummy
+is this what you wanted for
+is this what you left me for
+
+mummy

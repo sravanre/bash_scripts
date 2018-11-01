@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# select the option from a interface script
+
+select TOE in /bin /usr /etc /var
+
+do
+echo value showing before do loop \$TOE = $TOE  ## this shows that selected value is placed into the TOE variable
+						## what happens to the number which is entered
+
+if [ -n $TOE ]            # this evaluates the whethere we are testing a non zero value, 
+then 
+echo \$TOE = $TOE      # this is also to test what is being stored in TOE
+DIR=$DIR
+echo you have selected $DIR
+#export DIR
+break
+else
+echo invalid choice 
+
+fi
+done 

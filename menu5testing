@@ -1,0 +1,9 @@
+#!/bin/bash
+
+select task in red white yellow green saffron
+
+do 
+
+echo reply = $REPLY
+
+done 

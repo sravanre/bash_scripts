@@ -1,0 +1,18 @@
+#!/bin/bash
+
+noarg ()
+{
+echo no input is applied 
+echo provide input for to use
+}
+
+if [[ -z $1 ]]
+ then  
+noarg
+ 
+else 
+echo the input provided is $1
+
+fi
+
+

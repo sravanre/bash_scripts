@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo which directory you want to test
+read DIR
+
+cd $DIR
+pwd
+ls -ltr
+
+#exit 0

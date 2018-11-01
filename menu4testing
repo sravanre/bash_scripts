@@ -1,0 +1,10 @@
+#!/bin/bash
+
+select TASK in 'check mount' check disk
+
+do 
+
+echo TASK = $TASK
+echo cool = $COOL
+
+done

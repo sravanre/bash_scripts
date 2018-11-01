@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#script to run names of one or more people and that
+#
+
+echo Hello $1 how are you
+echo Hello $2 how are you too 
+
+
+exit 0

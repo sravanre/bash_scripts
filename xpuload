@@ -1,0 +1,21 @@
+#!/bin/bash
+
+usage=80
+
+if [ $usage -gt 80 ]
+then 
+sleep 2
+
+VAR2=$(ps -eo pcpu,pid -o comm= | sort -n -r | head -1)
+USAGE3=$(echo $VAR2 | awk '{ print $1 }')
+USAGE2=${USAGE%.*}
+PID2=$(echo $VAR2 | awk '{ print $2 }')
+PNAME2=$(echo $VAR2 | awk '{print $3 }')
+
+echo $USAGE3
+
+[ $USAGE2 -gt 80 ] && [ $PID1 = $PID2 ] && mail -s "the cpu load of $PNAME1 is above 80%" root < .
+wall "the cpu load of $PNAME1 is above 80%"
+
+fi
+

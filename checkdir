@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo provide which directory which you want to check for files
+
+read DIR
+cd $DIR
+
+for i in *    ## all files in this directory 
+do
+echo do you want to see those files
+read 
+cat $i
+done
+

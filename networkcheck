@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Define the network to be tested 
+
+read Network    # to get a network such to enter 
+
+[ -z "$Network"] && Network=`ip a | grep eth0 | tail -n 1 | awk '{print $2}'` && Network=${Network%/*}
+
+
+echo sravan is good
+echo network=$Network  ## till now script is from and ran successfully
+
+Network=${Network%.*}
+
+echo network after removing the host part = $Network
+
+#rm /tmp/uplist
+
+# code for checking all the ips into it
+
+for (( node=130; node<155; node++ ))
+	do 
+		 if ping -c1 $Network.$node > /dev/null
+			then 
+			echo $Network.$node >> /tmp/uplist   
+
+		fi
+	done
+echo press enter to read the output
+read
+
+cat /tmp/uplist
+
+exit 0
+		
+
+
+
+
+
+

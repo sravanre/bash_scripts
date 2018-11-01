@@ -1,0 +1,7 @@
+#!/bin/bash
+#to kill a process by using name
+
+echo Which process you want to kill ?  #this line asks for the service/process which needs to be killed 
+read TOKILL   # read option makes the following to be read into TOKILL i.e what we want to add into the variable TOKILL, here we are adding httpd to the variable TOKILL, we can use anything here
+
+kill $(ps aux | grep $TOKILL | grep -v grep | awk '{ print $2 })

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#script that created users and using specified options 
+# -a to add user home directory
+# -b to make group id 100
+# -c to make shell to 
+
+while getopts "adc:" opt
+do 
+case $opt in
+
+a ) VAR1=-m ;;
+b ) VAR2="-g 100" ;;
+c ) VAR3="-s $OPTARG" ;;
+* ) echo error message
+
+esac
+done
+
+
+echo the current arguments are set to $*
+shift $((OPTIND -1))
+echo now the current arguments are set to  $*
+echo useradd $VAR1 $VAR2 $VAR3 $1
+exit 0

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+echo "the value fo \$1 is $1"
+echo "the value of entire string is $*"
+echo "$@"
+echo $0
+shift
+echo "the new value of \$1 is $1"
+echo the new strign is $*
+
+exit 0

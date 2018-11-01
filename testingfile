@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -z $1 ]
+then 
+echo no input provided
+
+else 
+input provide is $1
+
+#elif [ ! -z $1 ]
+#then  
+#echo no input is provided 
+
+fi

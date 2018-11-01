@@ -1,0 +1,22 @@
+#!/bin/bash          # bash script to count the number of files in the directory which is read manaully
+			#	
+
+echo select the directory
+read DIR
+cd $DIR
+
+#if [ -d $DIR ]
+if true
+then
+counter=0
+	for i in $(ls $DIR)          # instead of listing the files i could have used  a * symbol which means it
+				# will take all the files in the directory, 
+
+	
+	do counter=$((counter+1))
+	done
+echo the files in directory is $counter
+else 
+echo the mentioned file is not a directory ,could be a file or nothing
+
+fi

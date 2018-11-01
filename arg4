@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# this script is to analyze the usage of $* and $@  to process the positional parameters that are passed t#hrough a command line.
+
+
+for TOKEN in "$*"
+
+do 
+
+# process each $TOKEN
+
+echo $TOKEN
+
+done
+

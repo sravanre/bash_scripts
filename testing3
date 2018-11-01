@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+#testing of if else and elif statements using directory and file conditions
+
+
+if [ -d $1 ] # checks if it ia a directory , if yes then executes the down echo
+then 
+echo $1 is directory
+
+elif [ -f $1 ]  #second condition to check fo 
+then
+echo $1 is a file
+
+else 
+echo $1 is not a file and not a directory # this executes when both the above conditions fails
+
+fi   # complusary for closing the bracket

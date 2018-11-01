@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+for i in {1..100}
+
+do 
+	ping -c 1 192.168.122.$i > /dev/null && echo 192.168.122.$i is pinging
+
+done

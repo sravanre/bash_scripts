@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# script that will grant executable permission to input scrit
+
+chmod +x $1
+
+echo the premission provided is down
+ls -l | grep $1

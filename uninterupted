@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#uninterupted scirpt
+
+trap "echo fdfdfdf d" INT
+trap"logger 'cannot stop' " Kill
+trap TERM
+
+while true; do true; done

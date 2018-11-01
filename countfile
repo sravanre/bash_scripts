@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#count the files in directory
+
+echo Provide the directory you want to count
+read DIR         # takes the path of the directory form the users in a interacitve manner
+cd $DIR   	# this cd command takes you to the path and into the directory where count has to be made
+
+COUNTER=0      			 # initiallizing counter  to 0
+for i in * 			 # all the files are addressed here with this why did we use * only here 
+
+do				   # untill for the all the files in dir , this do loop will run 
+COUNTER=$((COUNTER + 1))
+
+echo Number of files are $COUNTER 
+
+done 
+

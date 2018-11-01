@@ -1,0 +1,7 @@
+. /root/bin/sourceme
+. /root/bin/sourceme2
+echo the value of variale '$COLOR' is $COLOR
+
+#exit 0
+
+echo the value of variable '$COLOR2' is $COLOR2

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# select the option from a interface script
+
+select DIR in /bin /usr /etc /var
+
+do 
+if [ -n $DIR ]
+then 
+DIR=$DIR
+echo you have selected $DIR
+#export DIR
+break
+else
+echo invalid choice 
+
+fi
+done 

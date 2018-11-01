@@ -1,0 +1,28 @@
+#!/bin/bash
+
+select task in 'mount' 'check disk space' 'check memory'
+do
+if [ -n $TASK ]
+then
+TASK=$TASK
+TASK="mount"
+
+$TASK
+
+elif [-n $TASK]
+then
+TASK=$TASK
+TASK="df -h"
+$TASK
+
+elif [-n $TASK]
+then
+TASK=$TASK
+TASK="free -m"
+$TASK
+
+break
+else
+echo selected no opput
+fi
+done 

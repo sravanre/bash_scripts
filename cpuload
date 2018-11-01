@@ -1,0 +1,39 @@
+#!/bin/bash
+#####Script to monitor the cpu usage and inform all the user with a broadcast and mail to root ###
+
+# script that is used to take the variables from the users via argument $1 
+INTERVAL=$1
+
+while sleep $INTERVAL  # while sleep will run and start the script and will always be a true statement 
+							# executing always
+do 
+
+VARI=$(ps -eo pcpu,pid -o comm= | sort -n -r | head -1)  # fetches informantion by ps -eo
+USAGE=$(echo $VARI | awk '{ print $1 }')     		 #stores the value of pcpu into USAGE
+USAGE1=${USAGE%.*}					# removes .* value from the USAGE	
+PID1=$(echo $VARI | awk '{ print $2 }')			# stores the PID of the appplication
+PNAME1=$(echo $VARI | awk '{print $3 }')		#stores and assign the appli name to PNAME variable
+
+echo $VARI 					## checks that all are correctly fetched and these four lines	
+echo $USAGE1 			##these are not important in script final usauge	 
+echo $PID1                 
+echo $PNAME1
+
+#read      this was for a diagonistic purpose if the 
+
+if [ $USAGE1 -gt 80 ]   # this test if pcpu value is greater then 80 of any running process
+then                   ## and if it is there any process of that pcpu value
+sleep 7           # sleep for another 7 sec , so that if that value is still persistant 
+                   # then again fetching new process variables of pcpu 
+VAR2=$(ps -eo pcpu,pid -o comm= | sort -n -r | head -1)  # fetches the information of the ps -eo 
+USAGE3=$(echo $VAR2 | awk '{ print $1 }')     # aligning the values to new variables so that we can match if these are the same 
+USAGE2=${USAGE%.*}                     # clearing the decimal part 
+PID2=$(echo $VAR2 | awk '{ print $2 }')
+PNAME2=$(echo $VAR2 | awk '{print $3 }')
+                     ## if both the PID's matches and the pcpu value is also matched then  
+[ $USAGE2 -gt 80 ] && [ $PID1 = $PID2 ] && mail -s "the cpu load of $PNAME1 is above 80%" root < .
+wall "the cpu load of $PNAME1 is above 80%"    # send a wall message of the process name
+
+fi
+
+done

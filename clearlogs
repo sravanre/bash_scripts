@@ -1,0 +1,9 @@
+#!/bin/bash
+#script to clear logs
+
+
+cp /var/log/messages /var/log/messages.old
+cat dev/null > /var/log/messages
+echo log files copied and cleaned up
+
+exit 0

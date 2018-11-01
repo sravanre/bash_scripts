@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#testing for the command [ ] with using option -n and -z
+# -n stands of sting size non zero and -z is for string size 
+
+if [ -z $1 ]   # this runs only if no input is provided 
+then 
+echo NO input is provided
+fi
+
+if [ -n $1 ]
+then
+echo input provided is $1
+
+
+elif [ ! -z $1 ]   # string input is not zero 
+then 
+echo INPUT provided is $1
+
+fi
+

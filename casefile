@@ -1,0 +1,19 @@
+#!/bin/bash
+
+case $1 in
+	yes )
+	echo true 
+echo provide next input 
+	read INPUT
+
+echo the value entered is $INPUT 
+	;;
+
+	no )
+	echo false ;;
+
+	*) 
+	echo better luck next time;;	
+
+esac
+echo the value entered is $INPUT

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#Script that shows how arguments are used
+
+echo "\$* gives $*"
+echo "\$# gives $#"
+echo "\$@ gives $@"
+echo "\$0 gives $0"
+
+
+#showing interpretation for $*
+for i in "$*"
+do
+
+echo $i
+
+done
+
+# showing interpretation for $@
+for q in $@
+
+do 
+
+echo $q
+
+done 
+
+exit 0 
